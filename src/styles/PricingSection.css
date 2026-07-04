@@ -1,0 +1,347 @@
+/* ==========================
+   Pricing Section
+========================== */
+
+.pricing-section{
+    width:100%;
+    background:#EEF8FF;
+    padding:90px 20px;
+}
+
+.pricing-container{
+    max-width:1180px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+}
+
+/* ==========================
+   Left
+========================== */
+
+.pricing-left{
+    width:48%;
+}
+
+.pricing-left h2{
+    font-size:58px;
+    font-weight:800;
+    line-height:1.05;
+    color:#202124;
+    margin-bottom:34px;
+}
+
+.pricing-left p{
+    font-size:18px;
+    line-height:1.8;
+    color:#3F3F46;
+    margin-bottom:30px;
+}
+
+/* ==========================
+   Card
+========================== */
+
+.pricing-card{
+    width:500px;
+    height:260px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    padding:22px 24px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.pricing-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   Left Content
+========================== */
+
+.card-left{
+
+    grid-column:1;
+}
+
+.card-left h3{
+
+    margin:0 0 18px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#2F2F2F;
+}
+
+.old-price{
+
+    display:block;
+
+    font-size:14px;
+
+    color:#666;
+
+    text-decoration:line-through;
+
+    margin-bottom:8px;
+}
+
+.price-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:4px;
+}
+
+.starting-price{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#444;
+}
+
+.new-price{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#8757F7;
+
+    line-height:1;
+}
+
+.tax-text{
+
+    display:block;
+
+    font-size:13px;
+
+    color:#8B8B8B;
+
+    margin-bottom:18px;
+}
+
+/* ==========================
+   Image
+========================== */
+
+.card-right{
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    width:150px;
+
+    display:flex;
+    justify-content:center;
+}
+
+.aligner-image{
+    width:135px;
+    object-fit:contain;
+
+    transition:.3s;
+}
+
+.pricing-card:hover .aligner-image{
+    transform:rotate(-8deg) scale(1.04);
+}
+
+/* ==========================
+   Features
+========================== */
+
+.feature-list{
+
+    width:260px;
+}
+
+.feature-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    color:#333;
+}
+
+.feature-item svg{
+
+    color:#50C786;
+
+    flex-shrink:0;
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.card-footer{
+
+    grid-column:1 / span 2;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:flex-end;
+
+    margin-top:10px;
+}
+
+.learn-more-btn{
+
+    position:absolute;
+
+    right:-132px;
+
+    bottom:24px;
+
+    border:none;
+    background:none;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#8358F6;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.learn-more-btn:hover{
+
+    gap:14px;
+}
+
+.learn-more-btn svg{
+
+    transition:.3s;
+}
+
+.learn-more-btn:hover svg{
+
+    transform:translateX(5px);
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media(max-width:992px){
+
+.pricing-container{
+
+flex-direction:column;
+
+gap:60px;
+}
+
+.pricing-left{
+
+width:100%;
+
+text-align:center;
+}
+
+.pricing-left h2{
+
+font-size:46px;
+}
+
+.pricing-card{
+
+width:100%;
+
+max-width:500px;
+}
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:576px){
+
+.pricing-section{
+
+padding:60px 16px;
+}
+
+.pricing-left h2{
+
+font-size:36px;
+}
+
+.pricing-left p{
+
+font-size:16px;
+}
+
+.pricing-card{
+
+width:100%;
+
+height:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+}
+
+.card-right{
+
+justify-content:center;
+}
+
+.aligner-image{
+
+width:120px;
+}
+
+.card-footer{
+
+justify-content:center;
+}
+
+.learn-more-btn{
+
+font-size:16px;
+}
+
+}

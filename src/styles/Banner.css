@@ -1,0 +1,72 @@
+.offer-banner {
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #c9efb7 0%, #d9f0c7 25%, #cfe7f4 75%, #bfd8ea 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-banner p {
+  margin: 0;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.old-price {
+  margin-top: 8px;
+  color: #666;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.new-price {
+  font-weight: 800;
+  color: #000000 !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 768px) {
+  .offer-banner {
+    padding: 10px 0;
+  }
+
+  .offer-banner p {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .old-price {
+    font-size: 12px;
+  }
+
+  .new-price {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .offer-banner {
+    padding: 8px 0;
+  }
+
+  .offer-banner p {
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .old-price {
+    font-size: 11px;
+  }
+
+  .new-price {
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,59 @@
+/* ==========================================
+   HAPPY SMILERS
+========================================== */
+
+.testimonial-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-container h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: #202124;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 50px;
+}
+
+.testimonial-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-image img {
+  width: 100%;
+  max-width: 1160px;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  transition: transform 0.35s ease;
+}
+
+.testimonial-image img:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+
+  .testimonial-section {
+    padding: 60px 16px;
+  }
+
+  .testimonial-container h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-image img {
+    border-radius: 12px;
+  }
+
+}

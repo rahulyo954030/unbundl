@@ -1,0 +1,164 @@
+/* ===========================
+   Clinic Banner
+=========================== */
+
+.clinic-banner {
+    width: 100%;
+    background: #ffffff;
+    padding: 50px 20px;
+}
+
+.clinic-container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    background: #edf7ff;
+    border-radius: 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 42px 70px;
+
+    transition: all .3s ease;
+}
+
+.clinic-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .08);
+}
+
+/* ===========================
+   Left Side
+=========================== */
+
+.clinic-left {
+    flex: 1;
+    max-width: 760px;
+}
+
+.clinic-left h2 {
+    margin: 0;
+
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #161616;
+}
+
+/* ===========================
+   Right Side
+=========================== */
+
+.clinic-right {
+    width: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.clinic-logo {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+
+/* ===========================
+   Find Clinic
+=========================== */
+
+.find-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: transparent;
+    border: none;
+
+    color: #7C5CF6;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.find-btn:hover {
+    color: #6842ef;
+}
+
+.find-btn svg {
+    transition: transform .3s ease;
+}
+
+.find-btn:hover svg {
+    transform: translateY(2px);
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 992px) {
+
+    .clinic-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        padding: 35px 30px;
+    }
+
+    .clinic-left {
+        max-width: 100%;
+    }
+
+    .clinic-left h2 {
+        font-size: 22px;
+    }
+
+    .clinic-right {
+        width: 100%;
+    }
+
+    .clinic-logo {
+        width: 145px;
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 576px) {
+
+    .clinic-banner {
+        padding: 30px 16px;
+    }
+
+    .clinic-container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .clinic-left h2 {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .clinic-logo {
+        width: 120px;
+    }
+
+    .find-btn {
+        font-size: 16px;
+    }
+
+}

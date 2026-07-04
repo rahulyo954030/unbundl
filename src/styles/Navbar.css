@@ -1,0 +1,46 @@
+.navbar {
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+}
+
+.navbar-logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.call-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #8B5CF6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.call-btn:hover {
+    background: #7c3aed;
+    transform: scale(1.05);
+}
+
+.call-btn svg {
+    stroke: white;
+}

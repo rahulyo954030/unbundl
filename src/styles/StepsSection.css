@@ -1,0 +1,255 @@
+/* ==========================================
+   STEPS SECTION
+========================================== */
+
+.steps-section {
+  background: #edf8ff;
+  padding: 80px 20px;
+}
+
+.steps-container {
+  max-width: 1080px;
+  margin: 0 auto;
+
+  background: #ffffff;
+  border-radius: 24px;
+
+  padding: 56px;
+
+  display: grid;
+  grid-template-columns: 1.45fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================
+   LEFT
+========================================== */
+
+.steps-left h2 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1.2px;
+  color: #202124;
+  margin: 0 0 48px;
+  max-width: 520px;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 36px;
+  row-gap: 42px;
+}
+
+/* ==========================================
+   STEP
+========================================== */
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* ==========================================
+   NUMBER
+========================================== */
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+
+  border-radius: 50%;
+  border: 5px solid #cfe8fd;
+
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #202124;
+
+  transition: .3s ease;
+}
+
+.step-item:hover .step-number {
+  border-color: #8b5cf6;
+  transform: scale(1.08);
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.step-content h3 {
+  margin: 2px 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #202124;
+}
+
+.step-content p {
+  margin: 0;
+
+  max-width: 210px;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  color: #4b5563;
+}
+
+/* ==========================================
+   VIDEO
+========================================== */
+
+.steps-video {
+  position: relative;
+
+  width: 100%;
+  max-width: 360px;
+
+  margin-left: auto;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.steps-video img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  transition: .4s ease;
+}
+
+.steps-video:hover img {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   PLAY BUTTON
+========================================== */
+
+.play-button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 78px;
+  height: 78px;
+
+  border-radius: 50%;
+
+  border: 3px solid rgba(255,255,255,.95);
+
+  background: rgba(255,255,255,.18);
+
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: .35s ease;
+}
+
+.play-button svg {
+  color: #fff;
+  margin-left: 4px;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(139,92,246,.75);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .steps-video {
+    margin: auto;
+  }
+
+  .steps-left h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .steps-section {
+    padding: 60px 16px;
+  }
+
+  .steps-container {
+    padding: 30px 22px;
+    border-radius: 18px;
+  }
+
+  .steps-left h2 {
+    font-size: 32px;
+    margin-bottom: 36px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .step-number {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 17px;
+    border-width: 4px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .steps-video {
+    max-width: 320px;
+  }
+
+  .play-button {
+    width: 66px;
+    height: 66px;
+  }
+
+  .play-button svg {
+    width: 26px;
+    height: 26px;
+  }
+}
