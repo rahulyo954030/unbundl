@@ -1,11 +1,15 @@
 import "../styles/LeadForm.css";
+import useContent from "./common/useContent";
 
 function LeadForm() {
+  const { data } = useContent(8);
+  const content = data[1] || {};
+
   return (
     <section className="lead">
       <div className="lead-container">
 
-        <h2>Do you have Teeth Gaps or Crooked Teeth?</h2>
+        <h2>{content.title || "Do you have Teeth Gaps or Crooked Teeth?"}</h2>
 
         <div className="lead-radio">
           <label className="radio-item">
@@ -47,10 +51,9 @@ function LeadForm() {
         <div className="consent">
           <input type="checkbox" />
 
-          <p>
-            I hereby consent to receive calls / messages from Whistle and
-            its partners and override DND settings.
-          </p>
+          <p>{content.body || (
+            <>I hereby consent to receive calls / messages from Whistle and its partners and override DND settings.</>
+          )}</p>
         </div>
 
       </div>

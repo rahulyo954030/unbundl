@@ -1,4 +1,5 @@
 import "../styles/ResultsSection.css";
+import useContent from "./common/useContent";
 
 import before1 from "../assets/before1.png";
 import after1 from "../assets/after1.png";
@@ -12,7 +13,7 @@ import after3 from "../assets/after3.png";
 import before4 from "../assets/before4.png";
 import after4 from "../assets/after4.png";
 
-const results = [
+const defaultResults = [
   {
     before: before1,
     after: after1,
@@ -40,12 +41,25 @@ const results = [
 ];
 
 function ResultsSection() {
+  const { data: fetched } = useContent(10);
+  const content = fetched?.[4] || {};
+  const apiResults = fetched?.slice(0, 4) || [];
+  const results = defaultResults.map((r, i) => {
+    const post = apiResults[i];
+    if (!post) return r;
+    return {
+      before: r.before,
+      after: r.after,
+      concern: post.title || r.concern,
+      duration: post.body ? post.body.split(" ").slice(0,2).join(" ") : r.duration,
+    };
+  });
   return (
     <section className="results-section">
       <div className="results-container">
 
         <h2 className="results-title">
-          Results You’ll Love
+          {content.title || "Results You’ll Love"}
         </h2>
 
         <div className="results-grid">

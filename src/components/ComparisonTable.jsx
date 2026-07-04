@@ -3,7 +3,7 @@ import "../styles/ComparisonTable.css";
 import { Check, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 
-const data = [
+const tableData = [
   {
     feature: "Easy to complex cases",
     whistle: "Yes, mild to complex",
@@ -48,7 +48,21 @@ const data = [
   },
 ];
 
+import useContent from "./common/useContent";
+
 function ComparisonTable() {
+  const { data: fetched } = useContent(12);
+  const content = fetched?.[7] || {};
+  const apiRows = fetched?.slice(0, tableData.length) || [];
+  const rows = tableData.map((row, i) => {
+    const post = apiRows[i];
+    if (!post) return row;
+    return {
+      ...row,
+      feature: post.title || row.feature,
+      description: post.body || row.description,
+    };
+  });
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -59,7 +73,7 @@ function ComparisonTable() {
     <section className="comparison-section">
       <div className="comparison-container">
 
-        <h2>What sets Whistle apart?</h2>
+        <h2>{content.title || "What sets Whistle apart?"}</h2>
 
         <div className="comparison-table">
 
@@ -83,7 +97,7 @@ function ComparisonTable() {
 
           {/* Rows */}
 
-          {data.map((item, index) => (
+          {rows.map((item, index) => (
 
             <div
               className={`accordion-item ${

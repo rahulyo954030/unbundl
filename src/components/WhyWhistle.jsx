@@ -1,4 +1,5 @@
 import "../styles/WhyWhistle.css";
+import useContent from "./common/useContent";
 
 import feature1 from "../assets/feature1.png";
 import feature2 from "../assets/feature2.png";
@@ -33,39 +34,45 @@ const features = [
 ];
 
 function WhyWhistle() {
+  const { data: fetched } = useContent(12);
+  const content = fetched?.[5] || {};
+  const fetchedFeatures = fetched?.slice(0, features.length) || [];
+
   return (
     <section className="why-whistle">
 
       <div className="why-container">
 
         <h2 className="why-title">
-          Why Whistle?
+          {content.title || "Why Whistle?"}
         </h2>
 
         <div className="why-grid">
 
-          {features.map((item, index) => (
-            <div className="why-card" key={index}>
+          {features.map((item, index) => {
+            const dyn = fetchedFeatures[index] || {};
+            const title = dyn.title || item.title;
+            const desc = dyn.body || item.description;
+            return (
+              <div className="why-card" key={index}>
 
-              <div className="why-image">
+                <div className="why-image">
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                />
+                  <img src={item.image} alt={title} />
+
+                </div>
+
+                <div className="why-content">
+
+                  <h3>{title}</h3>
+
+                  <p>{desc}</p>
+
+                </div>
 
               </div>
-
-              <div className="why-content">
-
-                <h3>{item.title}</h3>
-
-                <p>{item.description}</p>
-
-              </div>
-
-            </div>
-          ))}
+            );
+          })}
 
         </div>
 

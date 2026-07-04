@@ -2,7 +2,7 @@ import "../styles/StepsSection.css";
 import { Play } from "lucide-react";
 import stepVideo from "../assets/steps-video.png";
 
-const steps = [
+const defaultSteps = [
   {
     number: "1",
     title: "Scan",
@@ -29,7 +29,21 @@ const steps = [
   },
 ];
 
+import useContent from "./common/useContent";
+
 function StepsSection() {
+  const { data: fetched } = useContent(12);
+  const content = fetched?.[8] || {};
+  const apiSteps = fetched?.slice(0, defaultSteps.length) || [];
+  const steps = defaultSteps.map((s, i) => {
+    const post = apiSteps[i];
+    if (!post) return s;
+    return {
+      ...s,
+      title: post.title || s.title,
+      description: post.body || s.description,
+    };
+  });
   return (
     <section className="steps-section">
       <div className="steps-container">
@@ -39,7 +53,7 @@ function StepsSection() {
         <div className="steps-left">
 
           <h2>
-            Get your perfect smile in four simple steps
+            {content.title || "Get your perfect smile in four simple steps"}
           </h2>
 
           <div className="steps-grid">

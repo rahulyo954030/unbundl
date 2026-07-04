@@ -1,8 +1,12 @@
 import "../styles/PricingSection.css";
 import alignerImage from "../assets/aligner-box.png";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import useContent from "./common/useContent";
 
 function PricingSection() {
+  const { data } = useContent(8);
+  const content = data[3] || {};
+
   return (
     <section className="pricing-section">
       <div className="pricing-container">
@@ -10,21 +14,17 @@ function PricingSection() {
         {/* Left */}
         <div className="pricing-left">
           <h2>
-            Dream smiles
-            <br />
-            achieved secretly
+            {content.title || (
+              <>Dream smiles<br />achieved secretly</>
+            )}
           </h2>
 
-          <p>
-            Experience the superior quality of our Whistle Aligners crafted
-            with 3-layer PU material. With 450+ clinics nationwide, enjoy
-            comfortable treatment by expert orthodontists at House of Clove.
-          </p>
+          <p>{content.body || (
+            <>Experience the superior quality of our Whistle Aligners crafted with 3-layer PU material. With 450+ clinics nationwide, enjoy comfortable treatment by expert orthodontists at House of Clove.</>
+          )}</p>
 
-          <p>
-            The pricing is different for every case. Cases with higher
-            complexity requiring more aligners and additional time and effort
-            from our dentists.
+          <p>{/* keep second paragraph static fallback */}
+            The pricing is different for every case. Cases with higher complexity requiring more aligners and additional time and effort from our dentists.
           </p>
         </div>
 

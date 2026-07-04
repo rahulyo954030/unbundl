@@ -1,20 +1,28 @@
 import "../styles/Hero.css";
 import homeHero from "../assets/home_hero.png";
+import useContent from "./common/useContent";
 
 function Hero() {
+  const { data } = useContent(6);
+  const content = data[0] || {};
+
   return (
     <section className="hero-section">
       <div className="hero-wrapper">
 
         <div className="hero-content">
           <h1>
-            Invisible Aligners for a dream smile
+            {content.title || "Invisible Aligners for a dream smile"}
           </h1>
 
           <p>
-            Book a Scan and avail a free
-            <br />
-            Orthodontist Consult <span>worth ₹1500</span>
+            {content.body || (
+              <>
+                Book a Scan and avail a free
+                <br />
+                Orthodontist Consult <span>worth ₹1500</span>
+              </>
+            )}
           </p>
         </div>
 

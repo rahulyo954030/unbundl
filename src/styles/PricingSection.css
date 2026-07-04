@@ -325,8 +325,11 @@ gap:20px;
 }
 
 .card-right{
-
-justify-content:center;
+    position:static;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:0;
 }
 
 .aligner-image{
@@ -335,13 +338,26 @@ width:120px;
 }
 
 .card-footer{
-
-justify-content:center;
+    justify-content:center;
+    position:relative;
+    margin-top:0;
+    padding-top:8px;
 }
 
 .learn-more-btn{
+    position:relative;
+    right:0;
+    bottom:0;
+    font-size:16px;
+    margin:0 auto;
+}
 
-font-size:16px;
+.card-left{
+    width:100%;
+}
+
+.feature-list{
+    width:100%;
 }
 
 }
