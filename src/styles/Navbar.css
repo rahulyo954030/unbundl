@@ -1,46 +1,125 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
 .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 72px;
+
     background: #ffffff;
+
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #f2f2f2;
+    align-items: center;
+
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+
+    z-index: 9999;
 }
+
+/* ==========================================
+   CONTAINER
+========================================== */
 
 .navbar-container {
     width: 100%;
     max-width: 1180px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 0 28px;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-logo img {
     height: 48px;
     width: auto;
     display: block;
+    user-select: none;
 }
+
+/* ==========================================
+   CALL BUTTON
+========================================== */
 
 .call-btn {
     width: 48px;
     height: 48px;
+
     border: none;
+    outline: none;
+
     border-radius: 50%;
+
     background: #8B5CF6;
-    color: white;
+    color: #ffffff;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
-    transition: 0.25s ease;
+
+    transition: all .3s ease;
 }
 
 .call-btn:hover {
-    background: #7c3aed;
-    transform: scale(1.05);
+    background: #7C3AED;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 24px rgba(139, 92, 246, .35);
+}
+
+.call-btn:active {
+    transform: scale(.96);
 }
 
 .call-btn svg {
-    stroke: white;
+    width: 22px;
+    height: 22px;
+    stroke: #ffffff;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 64px;
+    }
+
+    .navbar-container {
+        padding: 0 18px;
+    }
+
+    .navbar-logo img {
+        height: 42px;
+    }
+
+    .call-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+    .call-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
 }
