@@ -26,7 +26,8 @@ const benefits = [
 function BenefitCarousel() {
   return (
     <section className="benefit-bar">
-      <div className="marquee">
+      <div className="container-2xl">
+        <div className="marquee">
 
         {/* First Set */}
         <div className="marquee-content">
@@ -50,6 +51,7 @@ function BenefitCarousel() {
           ))}
         </div>
 
+        </div>
       </div>
     </section>
   );

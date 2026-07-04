@@ -21,3 +21,26 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Shared custom container to mimic `2xl container mx-auto max-w-7xl` */
+.site-container,
+[class*="-container"],
+[class$="-wrapper"] {
+  width: 100%;
+  max-width: 80rem; /* ~1280px, similar to max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Optional utility class you can add in JSX: */
+.container-2xl {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
